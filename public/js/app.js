@@ -19278,8 +19278,38 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log("bisou");
-console.log("françois");
+var valid = document.getElementById("valid");
+var card = document.getElementById("confirm");
+var back = document.getElementById("back");
+var confirm = document.getElementById("conf");
+var negoweb = document.getElementById("app");
+var fields = document.getElementsByClassName("field");
+
+function checkAllValid() {
+  var allValid = true;
+
+  for (var i = 0; i < fields.length; i++) {
+    if (fields[i].validity.valueMissing) {
+      allValid = false;
+    }
+  }
+
+  return allValid;
+}
+
+function forcard(event) {
+  if (checkAllValid()) {
+    event.preventDefault();
+    card.style.display = "initial";
+  }
+}
+
+function ret() {
+  card.style.display = "none";
+}
+
+valid.addEventListener("click", forcard);
+back.addEventListener("click", ret);
 
 /***/ }),
 

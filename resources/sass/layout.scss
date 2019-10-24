@@ -5,3 +5,82 @@
 h2{
     text-align: center;
 }
+.farm{
+    display: flex;
+    margin-bottom:30px;
+    flex-direction:row;
+    text-align: center;
+    position: relative;
+    top:1vh;
+    margin-left:100px
+}
+input{
+    margin-bottom:10px;
+    text-align: center;
+}
+.s1{
+    position: absolute;
+    right:-10px;
+    top: 45px;
+}
+.s2{
+    position: absolute;
+    right:-10px;
+    top: 45px;
+
+}
+.s3{
+    position: absolute;
+    right:-60px;
+    top: 45px;
+}
+.val{
+    width: 23vw;
+    margin-bottom:50px;
+}
+.titi{
+    font-size: 20px;
+    color: goldenrod;
+}
+.unit{
+    position: absolute;
+    left: 169px;
+    top: 38px;
+}
+.unitmin{
+    position: absolute;
+    left: 640px;
+    top: 124px;
+}
+.unitpour{
+    position: absolute;
+    left: 169px;
+    top: 210px;
+}
+.unittime{
+    position: absolute;
+    left: 640px;
+    top: 210px;
+}
+.card{
+    display: none;
+    position: absolute;
+    top: 7vh;
+    right: 5vw;
+}
+
+#valid{
+    position: relative;
+    left:38vw;
+}
+.inpu{
+    margin-left:10px;
+}
+.firstthree{
+width: 10%;
+margin-left: 168px;
+margin-right: 350px;
+}
+.secondthree{
+width: 10%;
+}

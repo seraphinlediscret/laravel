@@ -14,8 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', function () {
+    return view('Home/home');
+});
 //Route::get('/param', 'Controller@web');
 
 Route::get('/param', function () {
     return view('para/parameters');
+});
+Route::post('/param', 'ProjectController@param');
+
+Route::get('/app', function () {
+    return view('appli/appli');
 });

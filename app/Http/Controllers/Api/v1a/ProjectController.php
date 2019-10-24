@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1a;
 
+use App\Parameters;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Project;
@@ -56,8 +57,9 @@ class ProjectController extends Controller
             'error' => "Can't create this project",
             ], 500);
         }
+        
     }
-
+    
     /**
      * Display the specified resource.
      *
