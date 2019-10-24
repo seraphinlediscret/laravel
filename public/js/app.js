@@ -19237,6 +19237,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! ./indexe */ "./resources/js/indexe.js");
 
+__webpack_require__(/*! ./timer */ "./resources/js/timer.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -19332,6 +19334,110 @@ back.addEventListener("click", ret);
 open.addEventListener("click", openParam);
 confirm.addEventListener("click", closeParam);
 ixi.addEventListener("click", closeWindow);
+
+/***/ }),
+
+/***/ "./resources/js/timer.js":
+/*!*******************************!*\
+  !*** ./resources/js/timer.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var pomodoro = {
+  started: false,
+  minutes: 0,
+  seconds: 0,
+  count: 0,
+  fillerHeight: 0,
+  fillerIncrement: 0,
+  interval: null,
+  countDom: null,
+  minutesDom: null,
+  secondsDom: null,
+  fillerDom: null,
+  init: function init() {
+    var self = this;
+    this.minutesDom = document.querySelector('#minutes');
+    this.countDom = document.querySelector('#count');
+    this.secondsDom = document.querySelector('#seconds');
+    this.fillerDom = document.querySelector('#filler');
+    this.interval = setInterval(function () {
+      self.intervalCallback.apply(self);
+    }, 1000);
+
+    function startCon() {
+      self.startWork.apply(self);
+    }
+
+    ;
+    startCon();
+
+    document.querySelector('#count').onclick = function () {
+      self.startCount.apply(self);
+    };
+
+    document.querySelector('#stop').onclick = function () {
+      self.stopTimer.apply(self);
+    };
+  },
+  resetVariables: function resetVariables(mins, secs, started, compteur) {
+    this.minutes = mins;
+    this.seconds = secs;
+    this.started = started;
+    this.count = compteur;
+    this.fillerIncrement = 200 / (this.minutes * 60);
+    this.fillerHeight = 0;
+  },
+  startWork: function startWork() {
+    this.resetVariables(this.minutesDom.innerHTML, this.seconds = 0, true, this.countDom.innerHTML - 1);
+  },
+  stopTimer: function stopTimer() {
+    this.countDom.textContent--;
+
+    if (this.countDom.textContent < 0) {
+      this.countDom.textContent = 0;
+    }
+  },
+  toDoubleDigit: function toDoubleDigit(num) {
+    if (num < 10) {
+      return "0" + parseInt(num, 10);
+    }
+
+    return num;
+  },
+  updateDom: function updateDom() {
+    this.minutesDom.innerHTML = this.toDoubleDigit(this.minutes);
+    this.secondsDom.innerHTML = this.toDoubleDigit(this.seconds);
+    this.fillerHeight = this.fillerHeight + this.fillerIncrement;
+    this.fillerDom.style.height = this.fillerHeight + 'px';
+  },
+  intervalCallback: function intervalCallback() {
+    if (!this.started) return false;
+
+    if (this.seconds == 0) {
+      if (this.minutes == 0) {
+        this.timerComplete();
+        return;
+      }
+
+      this.seconds = 59;
+      this.minutes--;
+    } else {
+      this.seconds--;
+    }
+
+    this.updateDom();
+  },
+  timerComplete: function timerComplete() {
+    this.started = false;
+    this.fillerHeight = 0;
+  }
+};
+
+window.onload = function () {
+  pomodoro.init();
+};
 
 /***/ }),
 

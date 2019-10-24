@@ -1,0 +1,47 @@
+#negodevis{
+border:1px solid blue;
+margin-top:20px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+#pricev-a{
+    border:1px solid white;
+}
+
+#nbtour{
+    border:1px solid white;
+}
+.numbtour{
+    background-color: grey;
+    color: white;
+    border-radius: 90px;
+    padding: 30px;
+    font-size: 30px;
+}
+#pricep-r{
+    border:1px solid white;
+}
+///////global///////////
+.titstart{
+    padding: 5px;
+    color: white;
+    margin: 10px;
+    font-size: 30px;
+}
+.self{
+background-color: orange;
+}
+
+.buy{
+    background-color: blue;
+}
+
+.want{
+    background-color: green;
+}
+
+.exp{
+    background-color: red;
+}

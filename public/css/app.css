@@ -65,7 +65,7 @@ input {
 
 .unitpour {
   position: absolute;
-  left: 160px;
+  left: 168px;
   top: 210px;
 }
 
@@ -78,7 +78,7 @@ input {
 .card {
   display: none;
   position: absolute;
-  top: 70px;
+  top: 75px;
   right: 70px;
 }
 
@@ -187,8 +187,127 @@ h2 {
 }
 
 #open {
+  position: relative;
+  top: 1px;
+  left: 14px;
+}
+
+h1 {
+  text-decoration: underline;
+}
+
+.applic {
+  margin-left: 15px;
+}
+
+#paratime {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#tourcontent {
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  background-color: gray;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+#negodevis {
+  border: 1px solid blue;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#pricev-a {
+  border: 1px solid white;
+}
+
+#nbtour {
+  border: 1px solid white;
+}
+
+.numbtour {
+  background-color: grey;
+  color: white;
+  border-radius: 90px;
+  padding: 30px;
+  font-size: 30px;
+}
+
+#pricep-r {
+  border: 1px solid white;
+}
+
+.titstart {
+  padding: 5px;
+  color: white;
+  margin: 10px;
+  font-size: 30px;
+}
+
+.self {
+  background-color: orange;
+}
+
+.buy {
+  background-color: blue;
+}
+
+.want {
+  background-color: green;
+}
+
+.exp {
+  background-color: red;
+}
+
+#container {
+  border: 1px solid #333;
+  border-radius: 100px;
+  width: 137px;
+  margin: 20px auto;
+  padding: 5px;
+  text-align: center;
+  background: gray;
+}
+
+#timer {
+  color: white;
+  font-size: 30px;
+  margin: 37px auto;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+#time {
+  margin-top: 5px;
+  z-index: 1;
+  position: relative;
+}
+
+#filler {
+  background: red;
+  height: 0px;
+  width: 200px;
   position: absolute;
-  top: 130px;
-  right: 1px;
+  bottom: 0;
+}
+
+#pomodoro-app {
+  width: 285px;
+  position: absolute;
+  top: 150px;
+  right: 250px;
 }
 

@@ -1,0 +1,44 @@
+#container{
+    border: 1px solid #333;
+    border-radius: 100px;
+    width: 137px;
+    margin: 20px auto;
+    padding: 5px;
+    text-align: center;
+    background: gray;
+  }
+  
+  #timer{ 
+    color:white; 
+    font-size:30px; 
+    margin:37px auto;
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:default;
+  }
+  
+  #time{
+    margin-top:5px;
+    z-index : 1;
+    position:relative;
+  }
+  
+  #filler{
+    background : red;
+    height: 0px;
+    width: 200px;
+    position:absolute;
+    bottom:0;
+  }
+
+  #pomodoro-app{
+      width: 285px;
+      position: absolute;
+      top: 150px;
+      right: 250px;
+  }
