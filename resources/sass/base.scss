@@ -58,3 +58,21 @@ h2{
 .cardinput{
     width: 30vw;
 }
+#containerparam{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top:200px;
+    right:15px;
+    background-color: white;
+}
+#ixi{
+    position: absolute;
+    right: 500px;
+    top: 1px;
+}
+#open{
+    position: absolute;
+    top:130px;
+    right:1px;
+}

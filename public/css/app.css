@@ -10,10 +10,11 @@ h2 {
   display: flex;
   margin-bottom: 30px;
   flex-direction: row;
-  text-align: center;
+  border-radius: 30px;
   position: relative;
   top: 1vh;
   margin-left: 100px;
+  background-color: black;
 }
 
 input {
@@ -46,7 +47,8 @@ input {
 
 .titi {
   font-size: 20px;
-  color: goldenrod;
+  color: #fdfdfd;
+  font-weight: bold;
 }
 
 .unit {
@@ -57,32 +59,33 @@ input {
 
 .unitmin {
   position: absolute;
-  left: 640px;
+  left: 650px;
   top: 124px;
 }
 
 .unitpour {
   position: absolute;
-  left: 169px;
+  left: 160px;
   top: 210px;
 }
 
 .unittime {
   position: absolute;
-  left: 640px;
+  right: 450px;
   top: 210px;
 }
 
 .card {
   display: none;
   position: absolute;
-  top: 7vh;
-  right: 5vw;
+  top: 70px;
+  right: 70px;
 }
 
 #valid {
   position: relative;
-  left: 38vw;
+  left: 1071px;
+  top: -75px;
 }
 
 .inpu {
@@ -97,6 +100,10 @@ input {
 
 .secondthree {
   width: 10%;
+}
+
+.field {
+  width: 65%;
 }
 
 html,
@@ -162,5 +169,26 @@ h2 {
 
 .cardinput {
   width: 30vw;
+}
+
+#containerparam {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 200px;
+  right: 15px;
+  background-color: white;
+}
+
+#ixi {
+  position: absolute;
+  right: 500px;
+  top: 1px;
+}
+
+#open {
+  position: absolute;
+  top: 130px;
+  right: 1px;
 }
 

@@ -19284,6 +19284,9 @@ var back = document.getElementById("back");
 var confirm = document.getElementById("conf");
 var negoweb = document.getElementById("app");
 var fields = document.getElementsByClassName("field");
+var open = document.getElementById("open");
+var allparam = document.getElementById("containerparam");
+var ixi = document.getElementById("ixi");
 
 function checkAllValid() {
   var allValid = true;
@@ -19301,6 +19304,8 @@ function forcard(event) {
   if (checkAllValid()) {
     event.preventDefault();
     card.style.display = "initial";
+  } else {
+    alert("Veuillez remplir TOUS les champs du formulaire pour valider vos paramètres.");
   }
 }
 
@@ -19308,8 +19313,25 @@ function ret() {
   card.style.display = "none";
 }
 
+function openParam() {
+  allparam.style.display = "initial";
+}
+
+function closeParam() {
+  allparam.style.display = "none";
+  card.style.display = "none";
+}
+
+function closeWindow() {
+  allparam.style.display = "none";
+  card.style.display = "none";
+}
+
 valid.addEventListener("click", forcard);
 back.addEventListener("click", ret);
+open.addEventListener("click", openParam);
+confirm.addEventListener("click", closeParam);
+ixi.addEventListener("click", closeWindow);
 
 /***/ }),
 

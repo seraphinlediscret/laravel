@@ -33,8 +33,8 @@
                     Laravel
                 </div>
                 <a href="{{ asset('/home')}}" class="a-h">Accueil</a>
-                <a href="{{ asset('/param')}}"  class="a-p">Les paramètres</a>
-                <a href="{{ asset('/app')}}" class="a-a" id="app">La négociation</a>
+                <a href="{{ asset('/param')}}"  class="a-p">Application</a>
+                <!--<a href="{{ asset('/app')}}" class="a-a" id="app">La négociation</a>-->
             </div>
         </div>
             @yield('content')
