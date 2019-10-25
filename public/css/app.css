@@ -105,6 +105,11 @@ input {
   width: 65%;
 }
 
+#validaction {
+  height: 52px;
+  margin-top: 18px;
+}
+
 html,
 body {
   background-color: #fff;

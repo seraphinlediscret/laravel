@@ -49,31 +49,27 @@
 <div id="negodevis">
     <div id="pricea">
       <span class="titstart self titab">Prix vendeur</span>
-      <span class="titstart self">25000</span>
-      <span class="titstart self">24000</span>
+      <span class="titstart self" id="showprice"></span>
       </div>
       <div id="pricev">
       <span class="titstart buy titab">Prix acheteur</span>
-      <span class="titstart buy">18000</span>
-      <span class="titstart buy">|</span>
+      <span class="titstart buy" id="showbuy">|</span>
       </div>
 
       <div id="nbtour">
       <span class="numbtour">0</span>
       <span class="numbtour">1</span>
-      <span class="numbtour">2</span>
+      <span class="numbtour" id="showtour">2</span>
       </div>
 
       <div id="pricep">
       <span class="titstart want titab">Prix proposé</span>
-      <span class="titstart want">20000</span>
-      <span class="titstart want">_</span>
+      <span class="titstart want" id="showwant">_</span>
       </div>
 
       <div id="pricer">
       <span class="titstart exp titab">Rabais %</span>
-      <span class="titstart exp">-20 %</span>
-      <span class="titstart exp">_</span>
+      <span class="titstart exp" id="showrab">_</span>
       </div>
 </div>
 
@@ -81,10 +77,11 @@
 <div id="thenego">
 <form action="" method="post" class="needs-validation propok" novalidate>
       <div id="valprop">
-      <input type="number" class="form-control newprop" placeholder="Entrez une proposition" value="" required>
-      <button class="btn btn-warning" type="submit">Valider votre proposition</button>
-      </div> 
+      <input type="number" class="form-control newprop" id="validationCustom07" placeholder="Entrez une proposition" value="" required> 
 </form>
+</div> 
+
+<button class="btn btn-warning" type="submit" id="validaction">Valider votre proposition</button>
 
 <div id="yesorno">
     <button type="submit" class="btn btn-success accept">Acceptez l'offre</button>
@@ -98,7 +95,9 @@
 <div id="containerparam" >
 
     <button id="ixi" class="btn btn-danger">X</button>
+
     <h2>Modifier vos Paramètres</h2>
+
 <form method="post" action="" class="needs-validation " novalidate>
     <div class="farm">
         <div class="firstthree">
@@ -115,15 +114,15 @@
 
       <div class="cardinput">
         <label for="validationCustom02" class="titi">Nombre de trappes</label>
-        <input type="number" class="form-control field" id="validationCustom02" placeholder="Entrez votre nombre d'essais" value="" required>
+        <input type="number" class="form-control field nbt" id="validationCustom02" placeholder="Entrez votre nombre d'essais" value="" required>
         <div class="valid-feedback">
             Validé !
         </div>
       </div>
 
       <div class="cardinput">
-        <label for="validationCustom02" class="titi">Taux de la trappe</label>
-        <input type="number" class="form-control field" id="validationCustom02" placeholder="Entrez le taux de trappe" value="" required>
+        <label for="validationCustom03" class="titi">Taux de la trappe</label>
+        <input type="number" class="form-control field" id="validationCustom03 " placeholder="Entrez le taux de trappe" value="" required>
         <div class="input-group-append">
           <span class="input-group-text unitpour">%</span>
         </div>
@@ -135,16 +134,16 @@
 
     <div class="secondthree">
       <div class="cardinput">
-        <label for="validationCustom02" class="titi">Nombre de tours</label>
-        <input type="number" class="form-control field" id="validationCustom02" placeholder="Entrez votre nombre de tours" value="" required>
+        <label for="validationCustom04" class="titi">Nombre de tours</label>
+        <input type="number" class="form-control field" id="validationCustom04" placeholder="Entrez votre nombre de tours" value="" required>
         <div class="valid-feedback">
             Validé !
         </div>
       </div>
 
       <div class="cardinput">
-        <label for="validationCustom02" class="titi">Prix minimum de vente</label>
-        <input type="number" class="form-control field" id="validationCustom02" placeholder="Entrez votre prix minimum" value="" required>
+        <label for="validationCustom05" class="titi">Prix minimum de vente</label>
+        <input type="number" class="form-control field" id="validationCustom05 " placeholder="Entrez votre prix minimum" value="" required>
         <div class="input-group-append">
           <span class="input-group-text unitmin">€</span>
         </div>
@@ -154,8 +153,8 @@
         </div>
 
       <div class="cardinput">
-        <label for="validationCustom02" class="titi">Temps de négociation</label>
-        <input type="time" class="form-control field" id="validationCustom02" placeholder="Entrez la durée de négociation" value="" required>
+        <label for="validationCustom06" class="titi">Temps de négociation</label>
+        <input type="time" class="form-control field" id="validationCustom06" placeholder="Entrez la durée de négociation" value="" required>
         <div class="input-group-append">
           <span class="input-group-text unittime">minutes</span>
         </div>

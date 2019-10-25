@@ -19292,6 +19292,22 @@ var ixi = document.getElementById("ixi");
 var appli = document.getElementById("theapplinego");
 var exyt = document.getElementById("exyt");
 var well = document.getElementById("well");
+var validaction = document.getElementById("validaction"); //envoie de données//
+
+var priceshow = document.getElementById("validationCustom01");
+var trapshow = document.getElementById("validationCustom02");
+var rabshow = document.getElementById("validationCustom03");
+var tourshow = document.getElementById("validationCustom04");
+var priceminshow = document.getElementById("validationCustom05");
+var timeshow = document.getElementById("validationCustom06");
+var actionshow = document.getElementById("validationCustom07"); //reception affichage de données //
+
+var showcount = document.getElementById("count");
+var showprice = document.getElementById("showprice");
+var showbuy = document.getElementById("showbuy");
+var showwant = document.getElementById("showwant");
+var showtour = document.getElementById("showtour");
+var showrab = document.getElementById("showrab");
 
 function checkAllValid() {
   var allValid = true;
@@ -19327,7 +19343,10 @@ function closeParam() {
   card.style.display = "none";
   appli.style.display = "initial";
   open.style.display = "none";
-  well.style.display = "none";
+  well.style.display = "none"; //envoie de données//
+
+  showcount.textContent = tourshow.value;
+  showprice.textContent = priceshow.value;
 }
 
 function closeWindow() {
@@ -19339,12 +19358,17 @@ function closeNego() {
   window.location.reload();
 }
 
+function action() {
+  showwant.textContent = actionshow.value;
+}
+
 valid.addEventListener("click", forcard);
 back.addEventListener("click", ret);
 open.addEventListener("click", openParam);
 confirm.addEventListener("click", closeParam);
 ixi.addEventListener("click", closeWindow);
 exyt.addEventListener("click", closeNego);
+validaction.addEventListener("click", action);
 
 /***/ }),
 
