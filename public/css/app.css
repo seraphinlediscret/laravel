@@ -68,12 +68,6 @@ input {
   top: 210px;
 }
 
-.unittime {
-  position: absolute;
-  right: 450px;
-  top: 210px;
-}
-
 .card {
   display: none;
   position: absolute;
@@ -223,8 +217,23 @@ h1 {
 
 #well {
   position: absolute;
-  top: 400px;
-  left: 400px;
+  top: 349px;
+  left: 10px;
+  background-color: rgba(107, 98, 98, 0.8);
+  text-align: center;
+  padding: 15px;
+}
+
+#bvn {
+  font-size: 50px;
+  color: whitesmoke;
+}
+
+.titbvn {
+  color: black;
+  text-decoration: none;
+  font-size: 80px;
+  font-weight: bold;
 }
 
 #theapplinego {

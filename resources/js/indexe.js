@@ -27,6 +27,11 @@ let showbuy = document.getElementById("showbuy");
 let showwant = document.getElementById("showwant");
 let showtour = document.getElementById("showtour");
 let showrab = document.getElementById("showrab");
+let showtime = document.getElementById("minutes");
+
+//tableau de span//
+
+let table = [];
 
 function checkAllValid()
 {
@@ -70,6 +75,7 @@ function openParam() {
     //envoie de données//
    showcount.textContent = tourshow.value;
    showprice.textContent = priceshow.value;
+   showtime.textContent = timeshow.value;
  }
 
 function closeWindow() {
@@ -82,7 +88,7 @@ function closeNego() {
 }
 
 function action () {
-    showwant.textContent = actionshow.value;
+    showbuy.textContent = actionshow.value;
 }
 
 

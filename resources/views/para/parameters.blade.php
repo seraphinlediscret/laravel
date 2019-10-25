@@ -10,8 +10,8 @@
 
   <!--//////////////WELCOME/////////////////////-->
   <div id="well">
-    <h1 style="font-size:30px; color: blue;">Bienvenue dans la Negociation !</h1>
-    <p style="font-size: 20px; color : green;">Veuillez configurer vos paramètres pour lancer la negociation</p>
+    <h1 class="titbvn">Bienvenue dans la Negociation !</h1>
+    <p id="bvn">Veuillez configurer vos paramètres pour lancer la negociation</p>
   </div>
 
 <!--//////////////////NEGODEVIS/////////////////////-->
@@ -31,7 +31,7 @@
     <div id="container">
       <div id="timer">
           <div id="time">
-              <span id="minutes">2</span>
+              <span id="minutes"></span>
               <span id="colon">:</span>
               <span id="seconds">00</span>
           </div>
@@ -153,11 +153,8 @@
         </div>
 
       <div class="cardinput">
-        <label for="validationCustom06" class="titi">Temps de négociation</label>
-        <input type="time" class="form-control field" id="validationCustom06" placeholder="Entrez la durée de négociation" value="" required>
-        <div class="input-group-append">
-          <span class="input-group-text unittime">minutes</span>
-        </div>
+        <label for="validationCustom06" class="titi">Temps de négociation (en min)</label>
+        <input type="number" class="form-control field" id="validationCustom06" placeholder="Entrez la durée de négociation" value="" required>
         <div class="valid-feedback">
             Validé !
         </div>

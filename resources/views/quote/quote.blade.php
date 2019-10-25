@@ -1,4 +1,6 @@
 @extends('welcome')
 @section('content')
-<h2>Accueil</h2>
+<h2>Les devis</h2>
+
+
 @endsection

@@ -19308,6 +19308,9 @@ var showbuy = document.getElementById("showbuy");
 var showwant = document.getElementById("showwant");
 var showtour = document.getElementById("showtour");
 var showrab = document.getElementById("showrab");
+var showtime = document.getElementById("minutes"); //tableau de span//
+
+var table = [];
 
 function checkAllValid() {
   var allValid = true;
@@ -19347,6 +19350,7 @@ function closeParam() {
 
   showcount.textContent = tourshow.value;
   showprice.textContent = priceshow.value;
+  showtime.textContent = timeshow.value;
 }
 
 function closeWindow() {
@@ -19359,7 +19363,7 @@ function closeNego() {
 }
 
 function action() {
-  showwant.textContent = actionshow.value;
+  showbuy.textContent = actionshow.value;
 }
 
 valid.addEventListener("click", forcard);

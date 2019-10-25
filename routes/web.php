@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', function () {
-    return view('Home/home');
+    return view('home/home');
 });
 //Route::get('/param', 'Controller@web');
 
@@ -26,4 +26,12 @@ Route::post('/param', 'ProjectController@param');
 
 Route::get('/app', function () {
     return view('appli/appli');
+});
+
+Route::get('/rule', function () {
+    return view('rule/rule');
+});
+
+Route::get('/quote', function () {
+    return view('quote/quote');
 });
