@@ -19289,6 +19289,9 @@ var fields = document.getElementsByClassName("field");
 var open = document.getElementById("open");
 var allparam = document.getElementById("containerparam");
 var ixi = document.getElementById("ixi");
+var appli = document.getElementById("theapplinego");
+var exyt = document.getElementById("exyt");
+var well = document.getElementById("well");
 
 function checkAllValid() {
   var allValid = true;
@@ -19322,6 +19325,9 @@ function openParam() {
 function closeParam() {
   allparam.style.display = "none";
   card.style.display = "none";
+  appli.style.display = "initial";
+  open.style.display = "none";
+  well.style.display = "none";
 }
 
 function closeWindow() {
@@ -19329,11 +19335,16 @@ function closeWindow() {
   card.style.display = "none";
 }
 
+function closeNego() {
+  window.location.reload();
+}
+
 valid.addEventListener("click", forcard);
 back.addEventListener("click", ret);
 open.addEventListener("click", openParam);
 confirm.addEventListener("click", closeParam);
 ixi.addEventListener("click", closeWindow);
+exyt.addEventListener("click", closeNego);
 
 /***/ }),
 
@@ -19344,6 +19355,7 @@ ixi.addEventListener("click", closeWindow);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+var confirm = document.getElementById("conf");
 var pomodoro = {
   started: false,
   minutes: 0,
@@ -19371,7 +19383,7 @@ var pomodoro = {
     }
 
     ;
-    startCon();
+    confirm.addEventListener("click", startCon);
 
     document.querySelector('#count').onclick = function () {
       self.startCount.apply(self);

@@ -1,3 +1,6 @@
+let confirm = document.getElementById("conf");
+
+
 var pomodoro = {
     started : false,
     minutes : 0,
@@ -12,7 +15,6 @@ var pomodoro = {
     fillerDom : null,
 
     init : function(){
-        
       var self = this;
       this.minutesDom = document.querySelector('#minutes');
       this.countDom = document.querySelector('#count');
@@ -25,8 +27,9 @@ var pomodoro = {
       function startCon(){
           self.startWork.apply(self);
       };
+      confirm.addEventListener("click", startCon);
+      
 
-      startCon();
       document.querySelector('#count').onclick = function(){
           self.startCount.apply(self);
       };

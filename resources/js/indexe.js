@@ -7,6 +7,9 @@ let fields = document.getElementsByClassName("field");
 let open = document.getElementById("open");
 let allparam = document.getElementById("containerparam");
 let ixi = document.getElementById("ixi");
+let appli = document.getElementById("theapplinego")
+let exyt = document.getElementById("exyt");
+let well = document.getElementById("well");
 
 function checkAllValid()
 {
@@ -38,19 +41,30 @@ function ret() {
 
 function openParam() {
     allparam.style.display = "initial";
+    
 }
 
-function closeParam() {
+ function closeParam() {
     allparam.style.display = "none";
     card.style.display = "none";
-}
+    appli.style.display = "initial";
+    open.style.display = "none";
+    well.style.display = "none";
+ }
+
 function closeWindow() {
     allparam.style.display = "none";
     card.style.display = "none";
 }
+
+function closeNego() {
+    window.location.reload();
+}
+
 
 valid.addEventListener("click", forcard);
 back.addEventListener("click", ret );
 open.addEventListener("click", openParam);
 confirm.addEventListener("click", closeParam);
 ixi.addEventListener("click", closeWindow);
+exyt.addEventListener("click", closeNego)

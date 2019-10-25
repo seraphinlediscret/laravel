@@ -1,27 +1,46 @@
+#theapplinego{
+    display: none;
+}
+
 #negodevis{
 border:1px solid blue;
 margin-top:20px;
 display: flex;
 flex-direction: row;
 justify-content: center;
+
 }
 
-#pricev-a{
-    border:1px solid white;
+#pricea{
+    display: flex;
+    flex-direction: column;
+}
+#pricev{
+    display: flex;
+    flex-direction: column;
 }
 
 #nbtour{
-    border:1px solid white;
+    display: flex;
+    flex-direction: column;
 }
 .numbtour{
     background-color: grey;
     color: white;
     border-radius: 90px;
-    padding: 30px;
+    padding: 5px;
     font-size: 30px;
+    margin: 10px;
+    width: 60px;
+    text-align: center;
 }
-#pricep-r{
-    border:1px solid white;
+#pricep{
+    display: flex;
+    flex-direction: column;
+}
+#pricer{
+    display: flex;
+    flex-direction: column;
 }
 ///////global///////////
 .titstart{
@@ -29,6 +48,7 @@ justify-content: center;
     color: white;
     margin: 10px;
     font-size: 30px;
+    border-radius: 5px;
 }
 .self{
 background-color: orange;
@@ -44,4 +64,47 @@ background-color: orange;
 
 .exp{
     background-color: red;
+}
+.titab{
+    font-weight: bold;
+}
+/////////validation//////////
+#valprop{
+    display: flex;
+    flex-direction: row;
+}
+.propok{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.newprop{
+    width: 300px;
+    margin-right: 50px;
+}
+#thenego{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.accept, .refus{
+    margin-left: 38px;
+    height: 50px;
+    margin-top: 19px;
+}
+#exitandtour{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 30%;
+    margin-left: 68vw;
+}
+
+#exyt{
+    font-size: 30px;
+    padding:10px;
+    border-radius: 10px;
+    margin-right:10px;
+}
+#yesorno{
+    display: initial;
 }

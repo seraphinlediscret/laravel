@@ -75,6 +75,7 @@ h2{
     position: relative;
     top:1px;
     left:14px;
+    font-size: 30px;
 }
 h1{
     text-decoration: underline;
@@ -95,4 +96,10 @@ h1{
     background-color: gray;
     border-radius: 10px;
     margin-right:10px;
+    margin-top: 20px;
+}
+#well{
+    position: absolute;
+    top: 400px;
+    left: 400px;
 }

@@ -3,18 +3,32 @@
 
 <h1 class="applic">NegoDevis</h1>
 
+
   <div id="paratime">
     <button type="button" class="btn btn-info" id="open">Configurer vos paramètres</button>
-<!--//////////////////nb tour/////////////////////-->
-    <span id="tourcontent">nombre de tours : 5</span>
-</div>
+  </div>
+
+  <!--//////////////WELCOME/////////////////////-->
+  <div id="well">
+    <h1 style="font-size:30px; color: blue;">Bienvenue dans la Negociation !</h1>
+    <p style="font-size: 20px; color : green;">Veuillez configurer vos paramètres pour lancer la negociation</p>
+  </div>
+
+<!--//////////////////NEGODEVIS/////////////////////-->
+<div id="theapplinego"><!--div start-->
+<!--//////////////////nb tour and exit/////////////////////-->
+
+  <div id="exitandtour">
+    <button type="submit" class="btn btn-danger" id="exyt">Quitter la negociation</button>
+    <span id="tourcontent">nombre de tours :<div>
+        <span id="count"></span>
+    </div></span>
+  </div>
 
 <!---////////timer/////////-->
+
 <div id="pomodoro-app">
     <div id="container">
-       <!-- <div>
-            <span id="count">2</span>
-        </div>-->
       <div id="timer">
           <div id="time">
               <span id="minutes">2</span>
@@ -29,46 +43,84 @@
       </div>
   </div>
 </div>
+
 <!--/////////////////////application////////////////////////-->
+
 <div id="negodevis">
-    <div id="pricev-a">
-      <span class="titstart self">Prix vendeur</span>
-      <span class="titstart buy">Prix acheteur</span>
-    </div>
+    <div id="pricea">
+      <span class="titstart self titab">Prix vendeur</span>
+      <span class="titstart self">25000</span>
+      <span class="titstart self">24000</span>
+      </div>
+      <div id="pricev">
+      <span class="titstart buy titab">Prix acheteur</span>
+      <span class="titstart buy">18000</span>
+      <span class="titstart buy">|</span>
+      </div>
 
-    <div id="nbtour">
-    <span class="numbtour">0</span>
-    </div>
+      <div id="nbtour">
+      <span class="numbtour">0</span>
+      <span class="numbtour">1</span>
+      <span class="numbtour">2</span>
+      </div>
 
-    <div id="pricep-r">
-      <span class="titstart want">Prix proposé</span>
-      <span class="titstart exp">Rabais %</span>
-    </div>
+      <div id="pricep">
+      <span class="titstart want titab">Prix proposé</span>
+      <span class="titstart want">20000</span>
+      <span class="titstart want">_</span>
+      </div>
+
+      <div id="pricer">
+      <span class="titstart exp titab">Rabais %</span>
+      <span class="titstart exp">-20 %</span>
+      <span class="titstart exp">_</span>
+      </div>
 </div>
+
+<!------///////////validation//////////-------------->
+<div id="thenego">
+<form action="" method="post" class="needs-validation propok" novalidate>
+      <div id="valprop">
+      <input type="number" class="form-control newprop" placeholder="Entrez une proposition" value="" required>
+      <button class="btn btn-warning" type="submit">Valider votre proposition</button>
+      </div> 
+</form>
+
+<div id="yesorno">
+    <button type="submit" class="btn btn-success accept">Acceptez l'offre</button>
+    <button type="submit" class="btn btn-danger refus">Refuser l'offre</button>
+</div>
+</div>
+
+</div><!--div end-->
 <!--//parameters window//-->
+
 <div id="containerparam" >
-<button id="ixi" class="btn btn-danger">X</button>
-<h2>Modifier vos Paramètres</h2>
+
+    <button id="ixi" class="btn btn-danger">X</button>
+    <h2>Modifier vos Paramètres</h2>
 <form method="post" action="" class="needs-validation " novalidate>
     <div class="farm">
-      <div class="firstthree">
-      <div class="cardinput">
-        <label for="validationCustom01" class="titi">Prix du devis</label>
-        <input type="number" class="form-control field" id="validationCustom01" placeholder="Entrez votre prix initial" value="" required>
+        <div class="firstthree">
+            <div class="cardinput">
+              <label for="validationCustom01" class="titi">Prix du devis</label>
+              <input type="number" class="form-control field" id="validationCustom01" placeholder="Entrez votre prix initial" value="" required>
         <div class="input-group-append">
-          <span class="input-group-text unit">€</span>
+              <span class="input-group-text unit">€</span>
         </div>
         <div class="valid-feedback">
           Validé !
         </div>
       </div>
+
       <div class="cardinput">
         <label for="validationCustom02" class="titi">Nombre de trappes</label>
-        <input type="number" class="form-control field" id="validationCustom02" placeholder="Entrez votre nombre d'essaies" value="" required>
+        <input type="number" class="form-control field" id="validationCustom02" placeholder="Entrez votre nombre d'essais" value="" required>
         <div class="valid-feedback">
             Validé !
         </div>
       </div>
+
       <div class="cardinput">
         <label for="validationCustom02" class="titi">Taux de la trappe</label>
         <input type="number" class="form-control field" id="validationCustom02" placeholder="Entrez le taux de trappe" value="" required>
@@ -80,6 +132,7 @@
         </div>
       </div>
     </div>
+
     <div class="secondthree">
       <div class="cardinput">
         <label for="validationCustom02" class="titi">Nombre de tours</label>
@@ -88,6 +141,7 @@
             Validé !
         </div>
       </div>
+
       <div class="cardinput">
         <label for="validationCustom02" class="titi">Prix minimum de vente</label>
         <input type="number" class="form-control field" id="validationCustom02" placeholder="Entrez votre prix minimum" value="" required>
@@ -98,6 +152,7 @@
             Validé !
         </div>
         </div>
+
       <div class="cardinput">
         <label for="validationCustom02" class="titi">Temps de négociation</label>
         <input type="time" class="form-control field" id="validationCustom02" placeholder="Entrez la durée de négociation" value="" required>
@@ -110,19 +165,21 @@
       </div>
     </div>
       </div>
-    <!--////////////////////////////////////////card confirm///////////////////////////////////-->
+<!--////////////////////////////////////////card confirm///////////////////////////////////-->
+
 <div class="card" id="confirm" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Validation</h5>
-    <p class="card-text">Voulez-vous confirmer ces paramètres ?</p>
-    <a href="#" class="btn btn-primary" id="conf">Je confirme</a>
-    <a href="#" class="btn btn-primary" id="back">Retour</a>
-  </div>
+    <div class="card-body">
+        <h5 class="card-title">Validation</h5>
+        <p class="card-text">Voulez-vous confirmer ces paramètres ?</p>
+        <a href="#" class="btn btn-primary" id="conf">Je confirme</a>
+        <a href="#" class="btn btn-primary" id="back">Retour</a>
+    </div>
 </div>
   </form>
-
   <button class="btn btn-success val" type="submit" id="valid">Valider vos paramètres</button>
+
 </div>
+
   <!--///////////////////////////script////////////////////////////////////////////////////-->
   <script>
   // Example starter JavaScript for disabling form submissions if there are invalid fields
