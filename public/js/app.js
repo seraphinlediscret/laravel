@@ -19292,7 +19292,8 @@ var ixi = document.getElementById("ixi");
 var appli = document.getElementById("theapplinego");
 var exyt = document.getElementById("exyt");
 var well = document.getElementById("well");
-var validaction = document.getElementById("validaction"); //envoie de données//
+var validaction = document.getElementById("validaction");
+var first = document.getElementById("firstbtn"); //envoie de données//
 
 var priceshow = document.getElementById("validationCustom01");
 var trapshow = document.getElementById("validationCustom02");
@@ -19360,10 +19361,45 @@ function closeWindow() {
 
 function closeNego() {
   window.location.reload();
+} //////////ajout de span/////////////
+
+
+var count = 0;
+var list = document.querySelector('ul');
+list.addEventListener('click', function (ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+validaction.addEventListener("click", action);
+
+function actionFirst() {
+  showbuy.textContent = actionshow.value;
+  first.style.display = "none";
 }
 
+first.addEventListener("click", actionFirst);
+
 function action() {
-  showbuy.textContent = actionshow.value;
+  /////////////ajout list////////////////
+  var li = document.createElement("li");
+  var actionshow = document.getElementById("validationCustom07").value;
+  var t = document.createTextNode(actionshow);
+  li.appendChild(t);
+
+  if (actionshow === '') {
+    alert("Veuillez entrer une proposition !");
+  } else {
+    count++;
+    document.getElementById("myUL").appendChild(li);
+  }
+
+  document.getElementById("actionshow").value = "";
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode(count);
+  span.className = "increment";
+  span.appendChild(txt);
+  li.appendChild(span);
 }
 
 valid.addEventListener("click", forcard);
@@ -19372,7 +19408,6 @@ open.addEventListener("click", openParam);
 confirm.addEventListener("click", closeParam);
 ixi.addEventListener("click", closeWindow);
 exyt.addEventListener("click", closeNego);
-validaction.addEventListener("click", action);
 
 /***/ }),
 

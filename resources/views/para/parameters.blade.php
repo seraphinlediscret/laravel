@@ -59,7 +59,6 @@
       <div id="nbtour">
       <span class="numbtour">0</span>
       <span class="numbtour">1</span>
-      <span class="numbtour" id="showtour">2</span>
       </div>
 
       <div id="pricep">
@@ -72,16 +71,20 @@
       <span class="titstart exp" id="showrab">_</span>
       </div>
 </div>
+<ul id="myUL">
+    <li></li>
+  </ul> 
 
 <!------///////////validation//////////-------------->
 <div id="thenego">
 <form action="" method="post" class="needs-validation propok" novalidate>
       <div id="valprop">
-      <input type="number" class="form-control newprop" id="validationCustom07" placeholder="Entrez une proposition" value="" required> 
+      <input type="number" class="form-control newprop" id="validationCustom07" placeholder="Entrez une proposition" value="" required>
 </form>
 </div> 
 
 <button class="btn btn-warning" type="submit" id="validaction">Valider votre proposition</button>
+<button class="btn btn-warning" type="submit" id="firstbtn">Valider votre proposition</button>
 
 <div id="yesorno">
     <button type="submit" class="btn btn-success accept">Acceptez l'offre</button>
