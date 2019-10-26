@@ -19349,8 +19349,8 @@ function closeParam() {
   open.style.display = "none";
   well.style.display = "none"; //envoie de données//
 
-  showcount.textContent = tourshow.value;
-  showprice.textContent = priceshow.value;
+  showcount.textContent = tourshow.value; //showprice.textContent = priceshow.value;
+
   showtime.textContent = timeshow.value;
 }
 
@@ -19373,19 +19373,11 @@ list.addEventListener('click', function (ev) {
 }, false);
 validaction.addEventListener("click", action);
 
-function actionFirst() {
-  showbuy.textContent = actionshow.value;
-  first.style.display = "none";
-}
-
-first.addEventListener("click", actionFirst);
-
 function action() {
   /////////////ajout list////////////////
-  var li = document.createElement("li");
+  var li = document.createElement("LI");
   var actionshow = document.getElementById("validationCustom07").value;
-  var t = document.createTextNode(actionshow);
-  li.appendChild(t);
+  var pricetest = document.getElementById("validationCustom01").value;
 
   if (actionshow === '') {
     alert("Veuillez entrer une proposition !");
@@ -19394,12 +19386,49 @@ function action() {
     document.getElementById("myUL").appendChild(li);
   }
 
-  document.getElementById("actionshow").value = "";
+  document.getElementById("validationCustom07").value = "";
+  document.getElementById("validationCustom01").value = "";
   var span = document.createElement("SPAN");
   var txt = document.createTextNode(count);
-  span.className = "increment";
-  span.appendChild(txt);
-  li.appendChild(span);
+  var spantwo = document.createElement("SPAN");
+  var vend = document.createTextNode(pricetest);
+  var spanthree = document.createElement("SPAN");
+  var t = document.createTextNode(actionshow);
+  var spanfour = document.createElement("SPAN");
+  var want = document.createTextNode("prix proposé");
+  var spanfive = document.createElement("SPAN");
+  var sold = document.createTextNode("rabais %");
+  li.className = "allLi";
+  spantwo.className = "titstart self titab"; // vendeur
+
+  spantwo.id = "y";
+  spanthree.className = "titstart buy titab"; //acheteur
+
+  span.className = "numbtour"; //count
+
+  spanfour.className = "titstart want titab"; //prix proposé
+
+  spanfive.className = "titstart exp titab"; //rabais %
+
+  spantwo.appendChild(vend); //vendeur
+
+  li.appendChild(spantwo); //vendeur
+
+  li.appendChild(t); // value
+
+  spanthree.appendChild(t);
+  li.appendChild(spanthree);
+  span.appendChild(txt); // count
+
+  li.appendChild(span); //count
+
+  spanfour.appendChild(want); //prix proposé
+
+  li.appendChild(spanfour); //prix proposé
+
+  spanfive.appendChild(sold); //rabais %
+
+  li.appendChild(spanfive); //rabais %
 }
 
 valid.addEventListener("click", forcard);
@@ -19436,7 +19465,6 @@ var pomodoro = {
     this.minutesDom = document.querySelector('#minutes');
     this.countDom = document.querySelector('#count');
     this.secondsDom = document.querySelector('#seconds');
-    this.fillerDom = document.querySelector('#filler');
     this.interval = setInterval(function () {
       self.intervalCallback.apply(self);
     }, 1000);
@@ -19451,18 +19479,12 @@ var pomodoro = {
     document.querySelector('#count').onclick = function () {
       self.startCount.apply(self);
     };
-
-    document.querySelector('#stop').onclick = function () {
-      self.stopTimer.apply(self);
-    };
   },
   resetVariables: function resetVariables(mins, secs, started, compteur) {
     this.minutes = mins;
     this.seconds = secs;
     this.started = started;
     this.count = compteur;
-    this.fillerIncrement = 200 / (this.minutes * 60);
-    this.fillerHeight = 0;
   },
   startWork: function startWork() {
     this.resetVariables(this.minutesDom.innerHTML, this.seconds = 0, true, this.countDom.innerHTML - 1);
@@ -19484,8 +19506,6 @@ var pomodoro = {
   updateDom: function updateDom() {
     this.minutesDom.innerHTML = this.toDoubleDigit(this.minutes);
     this.secondsDom.innerHTML = this.toDoubleDigit(this.seconds);
-    this.fillerHeight = this.fillerHeight + this.fillerIncrement;
-    this.fillerDom.style.height = this.fillerHeight + 'px';
   },
   intervalCallback: function intervalCallback() {
     if (!this.started) return false;

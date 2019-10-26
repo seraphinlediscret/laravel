@@ -19,7 +19,6 @@ var pomodoro = {
       this.minutesDom = document.querySelector('#minutes');
       this.countDom = document.querySelector('#count');
       this.secondsDom = document.querySelector('#seconds');
-      this.fillerDom = document.querySelector('#filler');
       this.interval = setInterval(function(){
           self.intervalCallback.apply(self);
       }, 1000);
@@ -33,17 +32,13 @@ var pomodoro = {
       document.querySelector('#count').onclick = function(){
           self.startCount.apply(self);
       };
-      document.querySelector('#stop').onclick = function(){
-          self.stopTimer.apply(self);
-      };
+
     },
     resetVariables : function(mins, secs, started, compteur){
     this.minutes = mins;
     this.seconds = secs;
     this.started = started;
     this.count = compteur;
-    this.fillerIncrement = 200/(this.minutes*60);
-    this.fillerHeight = 0;  
     },
     startWork: function() {
     this.resetVariables(this.minutesDom.innerHTML, this.seconds = 0, true, this.countDom.innerHTML - 1);
@@ -66,8 +61,7 @@ var pomodoro = {
     updateDom : function(){
     this.minutesDom.innerHTML = this.toDoubleDigit(this.minutes);
     this.secondsDom.innerHTML = this.toDoubleDigit(this.seconds);
-    this.fillerHeight = this.fillerHeight + this.fillerIncrement;
-    this.fillerDom.style.height = this.fillerHeight + 'px';
+    
     },
     intervalCallback : function(){
     if(!this.started) return false;

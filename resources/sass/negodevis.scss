@@ -6,24 +6,11 @@
 border:1px solid blue;
 margin-top:20px;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 justify-content: center;
 
 }
 
-#pricea{
-    display: flex;
-    flex-direction: column;
-}
-#pricev{
-    display: flex;
-    flex-direction: column;
-}
-
-#nbtour{
-    display: flex;
-    flex-direction: column;
-}
 .numbtour{
     background-color: grey;
     color: white;
@@ -34,14 +21,7 @@ justify-content: center;
     width: 60px;
     text-align: center;
 }
-#pricep{
-    display: flex;
-    flex-direction: column;
-}
-#pricer{
-    display: flex;
-    flex-direction: column;
-}
+
 ///////global///////////
 .titstart{
     padding: 5px;
@@ -107,4 +87,14 @@ background-color: orange;
 }
 #yesorno{
     display: initial;
+}
+#navappli{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.allLi{
+display: flex;
+justify-content: space-around;
+flex-direction: row;
 }

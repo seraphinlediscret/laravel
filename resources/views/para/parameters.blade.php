@@ -46,53 +46,36 @@
 
 <!--/////////////////////application////////////////////////-->
 
-<div id="negodevis">
-    <div id="pricea">
+  <div id="negodevis">
+      <div id="navappli">
       <span class="titstart self titab">Prix vendeur</span>
-      <span class="titstart self" id="showprice"></span>
-      </div>
-      <div id="pricev">
       <span class="titstart buy titab">Prix acheteur</span>
-      <span class="titstart buy" id="showbuy">|</span>
-      </div>
-
-      <div id="nbtour">
       <span class="numbtour">0</span>
-      <span class="numbtour">1</span>
-      </div>
-
-      <div id="pricep">
       <span class="titstart want titab">Prix proposé</span>
-      <span class="titstart want" id="showwant">_</span>
+      <span class="titstart exp titab">Rabais %</span>>
       </div>
-
-      <div id="pricer">
-      <span class="titstart exp titab">Rabais %</span>
-      <span class="titstart exp" id="showrab">_</span>
-      </div>
+      
+      <ul id="myUL">
+      <li></li>
+      </ul> 
 </div>
-<ul id="myUL">
-    <li></li>
-  </ul> 
-
 <!------///////////validation//////////-------------->
 <div id="thenego">
 <form action="" method="post" class="needs-validation propok" novalidate>
       <div id="valprop">
-      <input type="number" class="form-control newprop" id="validationCustom07" placeholder="Entrez une proposition" value="" required>
+      <input type="number" class="form-control newprop" id="validationCustom07" placeholder="Entrez une proposition" required>
+      </div> 
 </form>
-</div> 
 
 <button class="btn btn-warning" type="submit" id="validaction">Valider votre proposition</button>
-<button class="btn btn-warning" type="submit" id="firstbtn">Valider votre proposition</button>
 
 <div id="yesorno">
     <button type="submit" class="btn btn-success accept">Acceptez l'offre</button>
     <button type="submit" class="btn btn-danger refus">Refuser l'offre</button>
 </div>
 </div>
-
 </div><!--div end-->
+
 <!--//parameters window//-->
 
 <div id="containerparam" >
