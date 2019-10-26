@@ -14,6 +14,13 @@
     <p id="bvn">Veuillez configurer vos paramètres pour lancer la negociation</p>
   </div>
 
+  <!--////////////////price start///////////////////--->
+  <div id="divini">
+    Prix initial du vendeur : 
+    <span id="priceini"></span>
+    <span>€</span>
+  </div>
+
 <!--//////////////////NEGODEVIS/////////////////////-->
 <div id="theapplinego"><!--div start-->
 <!--//////////////////nb tour and exit/////////////////////-->
@@ -56,7 +63,6 @@
       </div>
       
       <ul id="myUL">
-      <li></li>
       </ul> 
 </div>
 <!------///////////validation//////////-------------->

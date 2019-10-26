@@ -10,8 +10,11 @@ let ixi = document.getElementById("ixi");
 let appli = document.getElementById("theapplinego")
 let exyt = document.getElementById("exyt");
 let well = document.getElementById("well");
+let priceini = document.getElementById("priceini");
+let divini = document.getElementById("divini");
   let validaction = document.getElementById("validaction");
-  let first = document.getElementById("firstbtn");
+
+
 //envoie de données//
 let priceshow =document.getElementById("validationCustom01");
 let trapshow = document.getElementById("validationCustom02");
@@ -73,9 +76,10 @@ function openParam() {
     appli.style.display = "initial";
     open.style.display = "none";
     well.style.display = "none";
+    divini.style.display = "initial";
     //envoie de données//
+    priceini.textContent = priceshow.value;
    showcount.textContent = tourshow.value;
-   //showprice.textContent = priceshow.value;
    showtime.textContent = timeshow.value;
  }
 

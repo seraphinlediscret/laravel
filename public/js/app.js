@@ -19292,8 +19292,9 @@ var ixi = document.getElementById("ixi");
 var appli = document.getElementById("theapplinego");
 var exyt = document.getElementById("exyt");
 var well = document.getElementById("well");
-var validaction = document.getElementById("validaction");
-var first = document.getElementById("firstbtn"); //envoie de données//
+var priceini = document.getElementById("priceini");
+var divini = document.getElementById("divini");
+var validaction = document.getElementById("validaction"); //envoie de données//
 
 var priceshow = document.getElementById("validationCustom01");
 var trapshow = document.getElementById("validationCustom02");
@@ -19347,10 +19348,11 @@ function closeParam() {
   card.style.display = "none";
   appli.style.display = "initial";
   open.style.display = "none";
-  well.style.display = "none"; //envoie de données//
+  well.style.display = "none";
+  divini.style.display = "initial"; //envoie de données//
 
-  showcount.textContent = tourshow.value; //showprice.textContent = priceshow.value;
-
+  priceini.textContent = priceshow.value;
+  showcount.textContent = tourshow.value;
   showtime.textContent = timeshow.value;
 }
 
