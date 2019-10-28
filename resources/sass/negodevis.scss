@@ -23,11 +23,15 @@ justify-content: center;
 .newprop{
     width: 300px;
     margin-right: 50px;
+    position: relative;
+    bottom: -24px;
+
 }
 #thenego{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-bottom: 40px;
 }
 .accept, .refus{
     margin-left: 38px;

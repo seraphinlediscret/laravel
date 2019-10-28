@@ -69,13 +69,12 @@
 
 <!------///////////validation//////////-------------->
 <div id="thenego">
-<form class="needs-validation propok">
       <div id="valprop">
       <input type="number" class="form-control newprop" id="validationCustom07" placeholder="Entrez une proposition" required>
-      </div> 
-</form>
+      <button class="btn btn-warning" type="submit" id="validaction">Valider votre proposition</button>
+    </div> 
 
-<button class="btn btn-warning" type="submit" id="validaction">Valider votre proposition</button>
+
 
 <div id="yesorno">
     <button type="submit" class="btn btn-success accept" id="accept">Acceptez l'offre</button>

@@ -19297,7 +19297,8 @@ var divini = document.getElementById("divini");
 var validaction = document.getElementById("validaction");
 var accept = document.getElementById("accept");
 var refus = document.getElementById("refus");
-var pricewant = document.getElementById("pricewant"); //let v = showcount;
+var pricewant = document.getElementById("pricewant");
+var visibbutton = document.getElementById("valprop"); //let v = showcount;
 //envoie de données//
 
 var priceshow = document.getElementById("validationCustom01");
@@ -19314,9 +19315,8 @@ var showbuy = document.getElementById("showbuy");
 var showwant = document.getElementById("showwant");
 var showtour = document.getElementById("showtour");
 var showrab = document.getElementById("showrab");
-var showtime = document.getElementById("minutes"); //tableau de span//
-
-var table = []; // if (showtime === "01") {
+var showtime = document.getElementById("minutes"); //////////////Conditions timer////////////////
+// if (showtime === "01") {
 //     alert("attention il ne vous reste qu'une minute de négociation !")
 // }
 
@@ -19369,7 +19369,7 @@ function closeWindow() {
 
 function closeNego() {
   window.location.reload();
-} //////////ajout de span/////////////
+} //////////ajout de tr et td/////////////
 
 
 var count = 0;
@@ -19439,6 +19439,9 @@ function action() {
   spanfive.appendChild(sold); //rabais %
 
   tr.appendChild(spanfive); //rabais %
+  //////button invisible/////
+
+  visibbutton.style.display = "none";
 }
 
 function acceptNego() {//alert("Êtes-vous sur de vouloir accepter l'offre de " + "[" + pricewant.value + "] euros");
@@ -19447,6 +19450,7 @@ function acceptNego() {//alert("Êtes-vous sur de vouloir accepter l'offre de " 
 
 function refusNego() {
   alert("continuez la negociation");
+  visibbutton.style.display = "initial";
 }
 
 valid.addEventListener("click", forcard);

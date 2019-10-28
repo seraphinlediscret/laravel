@@ -12,10 +12,11 @@ let exyt = document.getElementById("exyt");
 let well = document.getElementById("well");
 let priceini = document.getElementById("priceini");
 let divini = document.getElementById("divini");
-  let validaction = document.getElementById("validaction");
+let validaction = document.getElementById("validaction");
 let accept = document.getElementById("accept");
 let refus = document.getElementById("refus");
 let pricewant = document.getElementById("pricewant");
+let visibbutton = document.getElementById("valprop");
 //let v = showcount;
 
 //envoie de données//
@@ -36,9 +37,7 @@ let showtour = document.getElementById("showtour");
 let showrab = document.getElementById("showrab");
 let showtime = document.getElementById("minutes");
 
-//tableau de span//
-
-let table = [];
+//////////////Conditions timer////////////////
 
 // if (showtime === "01") {
 //     alert("attention il ne vous reste qu'une minute de négociation !")
@@ -86,10 +85,12 @@ function openParam() {
     open.style.display = "none";
     well.style.display = "none";
     divini.style.display = "initial";
+
     //envoie de données//
+
     priceini.textContent = priceshow.value;
-   showcount.textContent = tourshow.value;
-   showtime.textContent = timeshow.value;
+    showcount.textContent = tourshow.value;
+    showtime.textContent = timeshow.value;
  }
 
 function closeWindow() {
@@ -101,7 +102,7 @@ function closeNego() {
     window.location.reload();
 }
 
-//////////ajout de span/////////////
+//////////ajout de tr et td/////////////
 
 let count = 0;
 var list = document.querySelector('ul');
@@ -109,9 +110,7 @@ list.addEventListener('click', function(ev) {
     if (ev.target.tagName === 'LI'){
         ev.target.classList.toggle('checked');
     }
-    
 }, false);
-
 
 validaction.addEventListener("click", action);
 
@@ -173,6 +172,9 @@ function action() {
  
       spanfive.appendChild(sold);//rabais %
       tr.appendChild(spanfive);//rabais %
+
+      //////button invisible/////
+      visibbutton.style.display = "none";
 }
 
 function acceptNego() {
@@ -182,6 +184,8 @@ function acceptNego() {
 }
 function refusNego() {
     alert("continuez la negociation");
+    visibbutton.style.display ="initial"
+
 }
 
 valid.addEventListener("click", forcard);
