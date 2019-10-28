@@ -51,23 +51,25 @@
   </div>
 </div>
 
-<!--/////////////////////application////////////////////////-->
+<!--//////////tableau appli////////////////////-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" class="titletable self">Prix Vendeur</th>
+      <th scope="col" class="titletable buy">Prix Acheteur</th>
+      <th scope="col" class="titletable counter">0</th>
+      <th scope="col" class="titletable want">Prix proposé</th>
+      <th scope="col" class="titletable sold">Rabais %</th>
+    </tr>
+  </thead>
+  <tbody id="theTABLE">
+    
+  </tbody>
+</table>
 
-  <div id="negodevis">
-      <div id="navappli">
-      <span class="titstart self titab">Prix vendeur</span>
-      <span class="titstart buy titab">Prix acheteur</span>
-      <span class="numbtour">0</span>
-      <span class="titstart want titab">Prix proposé</span>
-      <span class="titstart exp titab">Rabais %</span>>
-      </div>
-      
-      <ul id="myUL">
-      </ul> 
-</div>
 <!------///////////validation//////////-------------->
 <div id="thenego">
-<form action="" method="post" class="needs-validation propok" novalidate>
+<form class="needs-validation propok">
       <div id="valprop">
       <input type="number" class="form-control newprop" id="validationCustom07" placeholder="Entrez une proposition" required>
       </div> 
@@ -76,8 +78,8 @@
 <button class="btn btn-warning" type="submit" id="validaction">Valider votre proposition</button>
 
 <div id="yesorno">
-    <button type="submit" class="btn btn-success accept">Acceptez l'offre</button>
-    <button type="submit" class="btn btn-danger refus">Refuser l'offre</button>
+    <button type="submit" class="btn btn-success accept" id="accept">Acceptez l'offre</button>
+    <button type="submit" class="btn btn-danger refus" id="refus">Refuser l'offre</button>
 </div>
 </div>
 </div><!--div end-->

@@ -236,10 +236,6 @@ h1 {
   font-weight: bold;
 }
 
-li {
-  list-style-type: none;
-}
-
 #divini {
   padding: 10px;
   color: white;
@@ -261,45 +257,6 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.numbtour {
-  background-color: grey;
-  color: white;
-  border-radius: 90px;
-  padding: 5px;
-  font-size: 30px;
-  margin: 10px;
-  width: 60px;
-  text-align: center;
-}
-
-.titstart {
-  padding: 5px;
-  color: white;
-  margin: 10px;
-  font-size: 30px;
-  border-radius: 5px;
-}
-
-.self {
-  background-color: orange;
-}
-
-.buy {
-  background-color: blue;
-}
-
-.want {
-  background-color: green;
-}
-
-.exp {
-  background-color: red;
-}
-
-.titab {
-  font-weight: bold;
 }
 
 #valprop {
@@ -351,14 +308,9 @@ li {
 
 #navappli {
   display: flex;
-  justify-content: space-around;
   flex-direction: row;
-}
-
-.allLi {
-  display: flex;
   justify-content: space-around;
-  flex-direction: row;
+  margin-left: 50px;
 }
 
 #container {
@@ -406,72 +358,55 @@ li {
   right: 508px;
 }
 
-/* Include the padding and border in an element's total width and height */
-
-* {
-  box-sizing: border-box;
+.blockall {
+  text-align: center;
 }
 
-/* Remove margins and padding from the list */
-
-ul {
-  margin: 0;
-  padding: 0;
+.titletable {
+  text-align: center;
 }
 
-/* Style the list items */
-
-ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  background: #eee;
-  font-size: 18px;
-  transition: 0.2s;
-  /* make the list items unselectable */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+table {
+  margin-top: 20px;
 }
 
-/* Set all odd list items to a different color (zebra-stripes) */
-
-ul li:nth-child(odd) {
-  background: #f9f9f9;
+.self {
+  background-color: yellow;
 }
 
-/* Darker background-color on hover */
-
-ul li:hover {
-  background: #ddd;
+.buy {
+  background-color: blue;
 }
 
-/* When clicked on, add a background color and strike out text */
-
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
+.counter {
+  background-color: gray;
 }
 
-/* Add a "checked" mark when clicked on */
-
-ul li.checked::before {
-  content: "";
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
+.want {
+  background-color: green;
 }
 
-#myUL {
-  display: flex;
-  flex-direction: column;
+.sold {
+  background-color: red;
+}
+
+.selfed {
+  background-color: rgba(255, 255, 55, 0.5);
+}
+
+.buyed {
+  background-color: rgba(27, 118, 236, 0.5);
+}
+
+.countered {
+  background-color: rgba(177, 175, 175, 0.5);
+}
+
+.wanted {
+  background-color: rgba(28, 184, 28, 0.5);
+}
+
+.solded {
+  background-color: rgba(226, 36, 36, 0.5);
 }
 

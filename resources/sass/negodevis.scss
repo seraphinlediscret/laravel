@@ -11,43 +11,6 @@ justify-content: center;
 
 }
 
-.numbtour{
-    background-color: grey;
-    color: white;
-    border-radius: 90px;
-    padding: 5px;
-    font-size: 30px;
-    margin: 10px;
-    width: 60px;
-    text-align: center;
-}
-
-///////global///////////
-.titstart{
-    padding: 5px;
-    color: white;
-    margin: 10px;
-    font-size: 30px;
-    border-radius: 5px;
-}
-.self{
-background-color: orange;
-}
-
-.buy{
-    background-color: blue;
-}
-
-.want{
-    background-color: green;
-}
-
-.exp{
-    background-color: red;
-}
-.titab{
-    font-weight: bold;
-}
 /////////validation//////////
 #valprop{
     display: flex;
@@ -90,11 +53,8 @@ background-color: orange;
 }
 #navappli{
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
+    justify-content: space-around;
+    margin-left: 50px;
 }
-.allLi{
-display: flex;
-justify-content: space-around;
-flex-direction: row;
-}
+

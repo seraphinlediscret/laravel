@@ -13,7 +13,10 @@ let well = document.getElementById("well");
 let priceini = document.getElementById("priceini");
 let divini = document.getElementById("divini");
   let validaction = document.getElementById("validaction");
-
+let accept = document.getElementById("accept");
+let refus = document.getElementById("refus");
+let pricewant = document.getElementById("pricewant");
+//let v = showcount;
 
 //envoie de données//
 let priceshow =document.getElementById("validationCustom01");
@@ -25,7 +28,7 @@ let timeshow = document.getElementById("validationCustom06");
 let actionshow = document.getElementById("validationCustom07");
 
 //reception affichage de données //
-let showcount = document.getElementById("count");
+   let showcount = document.getElementById("count");
 let showprice = document.getElementById("showprice");
 let showbuy = document.getElementById("showbuy");
 let showwant = document.getElementById("showwant");
@@ -36,6 +39,12 @@ let showtime = document.getElementById("minutes");
 //tableau de span//
 
 let table = [];
+
+// if (showtime === "01") {
+//     alert("attention il ne vous reste qu'une minute de négociation !")
+// }
+
+
 
 function checkAllValid()
 {
@@ -103,70 +112,77 @@ list.addEventListener('click', function(ev) {
     
 }, false);
 
+
 validaction.addEventListener("click", action);
 
-
-function action () {
-     /////////////ajout list////////////////
-     var li = document.createElement("LI");
+function action() {
+      /////////////ajout list////////////////
+      var tr = document.createElement("TR");
     
-     var actionshow = document.getElementById("validationCustom07").value;
-     var pricetest = document.getElementById("validationCustom01").value;
-     
-     if (actionshow === ''){
-         alert("Veuillez entrer une proposition !");
-     } else {
-         count++
-         document.getElementById("myUL").appendChild(li);
-     }
-     document.getElementById("validationCustom07").value = "";
-     document.getElementById("validationCustom01").value = "";
-     var span = document.createElement("SPAN");
-     var txt = document.createTextNode(count);
-
-     var spantwo = document.createElement("SPAN");
-     var vend = document.createTextNode(pricetest);
-
-     var spanthree = document.createElement("SPAN");
-     var t = document.createTextNode(actionshow);
-
-     var spanfour = document.createElement("SPAN");
-     var want = document.createTextNode("prix proposé");
-
-     var spanfive = document.createElement("SPAN");
-     var sold = document.createTextNode("rabais %");
-
-
-     li.className = "allLi";
-     spantwo.className = "titstart self titab";// vendeur
-     spantwo.id = "y";
-     spanthree.className = "titstart buy titab";//acheteur
-     span.className = "numbtour";//count
-     spanfour.className = "titstart want titab";//prix proposé
-     spanfive.className = "titstart exp titab";//rabais %
-     
-
-     spantwo.appendChild(vend);//vendeur
-     li.appendChild(spantwo);//vendeur
-
-     li.appendChild(t); // value
-
-     spanthree.appendChild(t);
-     li.appendChild(spanthree);
-
-     span.appendChild(txt); // count
-     li.appendChild(span);//count
-
-     spanfour.appendChild(want);//prix proposé
-     li.appendChild(spanfour);//prix proposé
-
-     spanfive.appendChild(sold);//rabais %
-     li.appendChild(spanfive);//rabais %
-
-    
-     
+      var actionshow = document.getElementById("validationCustom07").value;
+      var pricetest = document.getElementById("validationCustom01").value;
+      
+      if (actionshow === ''){
+          alert("Veuillez entrer une proposition !");
+      } else {
+          count++
+          document.getElementById("theTABLE").appendChild(tr);
+      }
+      document.getElementById("validationCustom07").value = "";
+      document.getElementById("validationCustom01").value = "";
+      var span = document.createElement("TD");
+      var txt = document.createTextNode(count);
+ 
+      var spantwo = document.createElement("TD");
+      var vend = document.createTextNode(pricetest);
+      //var vend = document.createTextNode("32000");
+ 
+      var spanthree = document.createElement("TD");
+      var t = document.createTextNode(actionshow);
+ 
+      var spanfour = document.createElement("TD");
+      var want = document.createTextNode("25000");
+ 
+      var spanfive = document.createElement("TD");
+      var sold = document.createTextNode("20%");
+ 
+ 
+      tr.className = "trTABLE";
+      spantwo.className = "blockall selfed";// vendeur
+      spantwo.id = "y";
+      spanthree.className = "blockall buyed";//acheteur
+      span.className = "blockall countered";//count
+      spanfour.className = "blockall wanted";//prix proposé
+      spanfour.id = "priceprop";
+      spanfive.className = "blockall solded";//rabais %
+      
+ 
+      spantwo.appendChild(vend);//vendeur
+      tr.appendChild(spantwo);//vendeur
+ 
+      tr.appendChild(t); // value
+ 
+      spanthree.appendChild(t);
+      tr.appendChild(spanthree);
+ 
+      span.appendChild(txt); // count
+      tr.appendChild(span);//count
+ 
+      spanfour.appendChild(want);//prix proposé
+      tr.appendChild(spanfour);//prix proposé
+ 
+      spanfive.appendChild(sold);//rabais %
+      tr.appendChild(spanfive);//rabais %
 }
 
+function acceptNego() {
+//alert("Êtes-vous sur de vouloir accepter l'offre de " + "[" + pricewant.value + "] euros");
+//alert("prochainement");
+
+}
+function refusNego() {
+    alert("continuez la negociation");
+}
 
 valid.addEventListener("click", forcard);
 back.addEventListener("click", ret );
@@ -174,5 +190,5 @@ open.addEventListener("click", openParam);
 confirm.addEventListener("click", closeParam);
 ixi.addEventListener("click", closeWindow);
 exyt.addEventListener("click", closeNego);
-
-
+accept.addEventListener("click", acceptNego);
+refus.addEventListener("click", refusNego);
