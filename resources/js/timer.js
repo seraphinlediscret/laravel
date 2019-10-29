@@ -3,6 +3,7 @@ let bcfull = document.getElementById("bcfull");
 let stop = document.getElementById("stop");
 let thenego = document.getElementById("thenego");
 let final = document.getElementById("final");
+let container = document.getElementById("container");
 
 var pomodoro = {
     started : false,
@@ -50,17 +51,17 @@ var pomodoro = {
     },
     dangerMinuteur: function(){
 
-        this.timerDom.style.color = "red";
-        
+        this.timerDom.style.color = "white";
+        container.style.background  = "red";
         bcfull.style.display ="flex";
     },
     greenMinuteur: function(){
-
-    this.timerDom.style.color = "green";
+        container.style.background  = "green";
+    this.timerDom.style.color = "white";
     },
     blueMinuteur: function(){
-
-    this.timerDom.style.color = "blue";
+        container.style.background = "blue";
+    this.timerDom.style.color = "white";
     },
     stopMinuteur: function () {
         stop.style.display= "flex";

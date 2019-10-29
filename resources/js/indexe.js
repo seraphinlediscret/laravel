@@ -15,7 +15,7 @@ let divini = document.getElementById("divini");
 let validaction = document.getElementById("validaction");
 let accept = document.getElementById("accept");
 let refus = document.getElementById("refus");
-let pricewant = document.getElementById("pricewant");
+let priceprop = document.getElementById("priceprop");
 let visibbutton = document.getElementById("valprop");
 let yesorno = document.getElementById("yesorno");
 let stop = document.getElementById("stop");
@@ -133,8 +133,7 @@ function action() {
  
       var spantwo = document.createElement("TD");
       var vend = document.createTextNode(pricetest);
-      //var vend = document.createTextNode("32000");
- 
+     
       var spanthree = document.createElement("TD");
       var t = document.createTextNode(actionshow);
  
@@ -143,7 +142,6 @@ function action() {
  
       var spanfive = document.createElement("TD");
       var sold = document.createTextNode("20%");
- 
  
       tr.className = "trTABLE";
       spantwo.className = "blockall selfed";// vendeur
@@ -154,7 +152,6 @@ function action() {
       spanfour.id = "priceprop";
       spanfive.className = "blockall solded";//rabais %
       
- 
       spantwo.appendChild(vend);//vendeur
       tr.appendChild(spantwo);//vendeur
  
@@ -181,7 +178,7 @@ function action() {
       if(showcount.textContent < 1){
         stop.style.display= "flex";
         thenego.style.display = "none";
-    } else if (showcount.textContent == 1) {
+        } else if (showcount.textContent == 1) {
     stop.style.display= "none";
 } 
 }
@@ -190,15 +187,11 @@ validaction.addEventListener("click", action);
 
 ////////conditions//////////////
 
- 
-
-
-
 function acceptNego() {
-//alert("Êtes-vous sur de vouloir accepter l'offre de " + "[" + pricewant.value + "] euros");
-//alert("prochainement");
-
+//alert("Êtes-vous sur de vouloir accepter l'offre de " + "[" + priceprop + "] euros ");
+alert("prochainement");
 }
+
 function refusNego() {
     visibbutton.style.display ="flex";
     yesorno.style.display = "none";

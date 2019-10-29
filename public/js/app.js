@@ -19233,7 +19233,28 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+ligne = 1;
 
+function clickbutton(lig) {
+  oldprop = $("#prop" + ligne).val();
+  $("#button" + ligne).attr("disabled", true);
+  $.ajax({
+    url: 'ajax-jquery-content.php',
+    type: 'POST',
+    data: {
+      ligne: ligne,
+      oldprop: oldprop
+    },
+    datatype: 'HTML',
+    success: function success(codehtml, statut) {
+      //alert(codehtml); 
+      $("#theform").append(codehtml);
+    }
+  });
+  ligne++;
+}
+
+;
 
 /***/ }),
 
@@ -19310,7 +19331,7 @@ var divini = document.getElementById("divini");
 var validaction = document.getElementById("validaction");
 var accept = document.getElementById("accept");
 var refus = document.getElementById("refus");
-var pricewant = document.getElementById("pricewant");
+var priceprop = document.getElementById("priceprop");
 var visibbutton = document.getElementById("valprop");
 var yesorno = document.getElementById("yesorno");
 var stop = document.getElementById("stop");
@@ -19412,8 +19433,7 @@ function action() {
   var span = document.createElement("TD");
   var txt = document.createTextNode(count);
   var spantwo = document.createElement("TD");
-  var vend = document.createTextNode(pricetest); //var vend = document.createTextNode("32000");
-
+  var vend = document.createTextNode(pricetest);
   var spanthree = document.createElement("TD");
   var t = document.createTextNode(actionshow);
   var spanfour = document.createElement("TD");
@@ -19469,8 +19489,9 @@ function action() {
 
 validaction.addEventListener("click", action); ////////conditions//////////////
 
-function acceptNego() {//alert("Êtes-vous sur de vouloir accepter l'offre de " + "[" + pricewant.value + "] euros");
-  //alert("prochainement");
+function acceptNego() {
+  //alert("Êtes-vous sur de vouloir accepter l'offre de " + "[" + priceprop + "] euros ");
+  alert("prochainement");
 }
 
 function refusNego() {
@@ -19504,6 +19525,7 @@ var thenego = document.getElementById("thenego");
 
 var _final = document.getElementById("final");
 
+var container = document.getElementById("container");
 var pomodoro = {
   started: false,
   minutes: 0,
@@ -19548,14 +19570,17 @@ var pomodoro = {
     console.log(this.minutesDom.innerHTML);
   },
   dangerMinuteur: function dangerMinuteur() {
-    this.timerDom.style.color = "red";
+    this.timerDom.style.color = "white";
+    container.style.background = "red";
     bcfull.style.display = "flex";
   },
   greenMinuteur: function greenMinuteur() {
-    this.timerDom.style.color = "green";
+    container.style.background = "green";
+    this.timerDom.style.color = "white";
   },
   blueMinuteur: function blueMinuteur() {
-    this.timerDom.style.color = "blue";
+    container.style.background = "blue";
+    this.timerDom.style.color = "white";
   },
   stopMinuteur: function stopMinuteur() {
     stop.style.display = "flex";

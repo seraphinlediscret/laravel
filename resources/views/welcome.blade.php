@@ -36,6 +36,7 @@
                 <a href="{{ asset('/quote')}}" class="a-q" id="app">Les devis</a>
                 <a href="{{ asset('/rule')}}" class="a-r" id="app">Les règles</a>
                 <a href="{{ asset('/param')}}"  class="a-p">Application</a>
+                <a href="{{ asset('/app')}}"  class="a-p">test ajax</a>
                 
             </div>
         </div>
