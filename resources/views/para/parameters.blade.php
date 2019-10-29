@@ -25,6 +25,14 @@
 <div id="theapplinego"><!--div start-->
 <!--//////////////////nb tour and exit/////////////////////-->
 
+<div id="stop"> !! La négociation est terminé !! <br> 
+  Veuillez "accepter" ou "refuser" la dernière proposition.
+  <div id="btnend">
+  <button type="submit" class="btn btn-success accept">Acceptez l'offre</button>
+  <button type="submit" class="btn btn-danger refus" id="theEND">Refuser l'offre</button>
+</div>
+</div>
+
   <div id="exitandtour">
     <button type="submit" class="btn btn-danger" id="exyt">Quitter la negociation</button>
     <span id="tourcontent">nombre de tours :<div>
@@ -68,6 +76,9 @@
 </table>
 
 <!------///////////validation//////////-------------->
+<div id="bcfull">
+  !! Attention il ne vous reste plus qu'une minutes de négociation !!
+</div>
 <div id="thenego">
       <div id="valprop">
       <input type="number" class="form-control newprop" id="validationCustom07" placeholder="Entrez une proposition" required>

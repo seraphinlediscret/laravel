@@ -17,7 +17,10 @@ let accept = document.getElementById("accept");
 let refus = document.getElementById("refus");
 let pricewant = document.getElementById("pricewant");
 let visibbutton = document.getElementById("valprop");
-//let v = showcount;
+let yesorno = document.getElementById("yesorno");
+let stop = document.getElementById("stop");
+let thenego = document.getElementById("thenego");
+let theEND = document.getElementById("theEND");
 
 //envoie de données//
 let priceshow =document.getElementById("validationCustom01");
@@ -29,21 +32,13 @@ let timeshow = document.getElementById("validationCustom06");
 let actionshow = document.getElementById("validationCustom07");
 
 //reception affichage de données //
-   let showcount = document.getElementById("count");
+let showcount = document.getElementById("count");///nombre de tour
 let showprice = document.getElementById("showprice");
 let showbuy = document.getElementById("showbuy");
 let showwant = document.getElementById("showwant");
 let showtour = document.getElementById("showtour");
 let showrab = document.getElementById("showrab");
 let showtime = document.getElementById("minutes");
-
-//////////////Conditions timer////////////////
-
-// if (showtime === "01") {
-//     alert("attention il ne vous reste qu'une minute de négociation !")
-// }
-
-
 
 function checkAllValid()
 {
@@ -91,7 +86,11 @@ function openParam() {
     priceini.textContent = priceshow.value;
     showcount.textContent = tourshow.value;
     showtime.textContent = timeshow.value;
+
+   
  }
+
+ 
 
 function closeWindow() {
     allparam.style.display = "none";
@@ -112,7 +111,7 @@ list.addEventListener('click', function(ev) {
     }
 }, false);
 
-validaction.addEventListener("click", action);
+
 
 function action() {
       /////////////ajout list////////////////
@@ -175,7 +174,25 @@ function action() {
 
       //////button invisible/////
       visibbutton.style.display = "none";
+      yesorno.style.display = "initial";
+      ///////decrementation//////
+      showcount.textContent--;
+
+      if(showcount.textContent < 1){
+        stop.style.display= "flex";
+        thenego.style.display = "none";
+    } else if (showcount.textContent == 1) {
+    stop.style.display= "none";
+} 
 }
+
+validaction.addEventListener("click", action);
+
+////////conditions//////////////
+
+ 
+
+
 
 function acceptNego() {
 //alert("Êtes-vous sur de vouloir accepter l'offre de " + "[" + pricewant.value + "] euros");
@@ -183,9 +200,8 @@ function acceptNego() {
 
 }
 function refusNego() {
-    alert("continuez la negociation");
-    visibbutton.style.display ="initial"
-
+    visibbutton.style.display ="flex";
+    yesorno.style.display = "none";
 }
 
 valid.addEventListener("click", forcard);
@@ -196,3 +212,4 @@ ixi.addEventListener("click", closeWindow);
 exyt.addEventListener("click", closeNego);
 accept.addEventListener("click", acceptNego);
 refus.addEventListener("click", refusNego);
+theEND.addEventListener("click", closeNego);

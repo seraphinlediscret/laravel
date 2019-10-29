@@ -127,3 +127,26 @@ h1{
     font-size: 30px;
     display: none;
 }
+#stop{
+    font-size: 40px;
+    color: red;
+    display: none;
+    position: absolute;
+    left: 120px;
+    top: 350px;
+    background-color: white;
+    flex-direction: column;
+    z-index: 1;
+    padding: 55px;
+    text-align: center;
+}
+#btnend{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#bcfull{
+    color: red;
+    display: none;
+    margin-left: 267px;
+}

@@ -19226,6 +19226,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/ajax.js":
+/*!******************************!*\
+  !*** ./resources/js/ajax.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -19238,6 +19249,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! ./indexe */ "./resources/js/indexe.js");
 
 __webpack_require__(/*! ./timer */ "./resources/js/timer.js");
+
+__webpack_require__(/*! ./ajax */ "./resources/js/ajax.js");
 
 /***/ }),
 
@@ -19298,8 +19311,11 @@ var validaction = document.getElementById("validaction");
 var accept = document.getElementById("accept");
 var refus = document.getElementById("refus");
 var pricewant = document.getElementById("pricewant");
-var visibbutton = document.getElementById("valprop"); //let v = showcount;
-//envoie de données//
+var visibbutton = document.getElementById("valprop");
+var yesorno = document.getElementById("yesorno");
+var stop = document.getElementById("stop");
+var thenego = document.getElementById("thenego");
+var theEND = document.getElementById("theEND"); //envoie de données//
 
 var priceshow = document.getElementById("validationCustom01");
 var trapshow = document.getElementById("validationCustom02");
@@ -19309,16 +19325,14 @@ var priceminshow = document.getElementById("validationCustom05");
 var timeshow = document.getElementById("validationCustom06");
 var actionshow = document.getElementById("validationCustom07"); //reception affichage de données //
 
-var showcount = document.getElementById("count");
+var showcount = document.getElementById("count"); ///nombre de tour
+
 var showprice = document.getElementById("showprice");
 var showbuy = document.getElementById("showbuy");
 var showwant = document.getElementById("showwant");
 var showtour = document.getElementById("showtour");
 var showrab = document.getElementById("showrab");
-var showtime = document.getElementById("minutes"); //////////////Conditions timer////////////////
-// if (showtime === "01") {
-//     alert("attention il ne vous reste qu'une minute de négociation !")
-// }
+var showtime = document.getElementById("minutes");
 
 function checkAllValid() {
   var allValid = true;
@@ -19379,7 +19393,6 @@ list.addEventListener('click', function (ev) {
     ev.target.classList.toggle('checked');
   }
 }, false);
-validaction.addEventListener("click", action);
 
 function action() {
   /////////////ajout list////////////////
@@ -19442,15 +19455,27 @@ function action() {
   //////button invisible/////
 
   visibbutton.style.display = "none";
+  yesorno.style.display = "initial"; ///////decrementation//////
+
+  showcount.textContent--;
+
+  if (showcount.textContent < 1) {
+    stop.style.display = "flex";
+    thenego.style.display = "none";
+  } else if (showcount.textContent == 1) {
+    stop.style.display = "none";
+  }
 }
+
+validaction.addEventListener("click", action); ////////conditions//////////////
 
 function acceptNego() {//alert("Êtes-vous sur de vouloir accepter l'offre de " + "[" + pricewant.value + "] euros");
   //alert("prochainement");
 }
 
 function refusNego() {
-  alert("continuez la negociation");
-  visibbutton.style.display = "initial";
+  visibbutton.style.display = "flex";
+  yesorno.style.display = "none";
 }
 
 valid.addEventListener("click", forcard);
@@ -19461,6 +19486,7 @@ ixi.addEventListener("click", closeWindow);
 exyt.addEventListener("click", closeNego);
 accept.addEventListener("click", acceptNego);
 refus.addEventListener("click", refusNego);
+theEND.addEventListener("click", closeNego);
 
 /***/ }),
 
@@ -19472,6 +19498,12 @@ refus.addEventListener("click", refusNego);
 /***/ (function(module, exports) {
 
 var confirm = document.getElementById("conf");
+var bcfull = document.getElementById("bcfull");
+var stop = document.getElementById("stop");
+var thenego = document.getElementById("thenego");
+
+var _final = document.getElementById("final");
+
 var pomodoro = {
   started: false,
   minutes: 0,
@@ -19487,6 +19519,7 @@ var pomodoro = {
   init: function init() {
     var self = this;
     this.minutesDom = document.querySelector('#minutes');
+    this.timerDom = document.getElementById('timer');
     this.countDom = document.querySelector('#count');
     this.secondsDom = document.querySelector('#seconds');
     this.interval = setInterval(function () {
@@ -19511,8 +19544,24 @@ var pomodoro = {
     this.count = compteur;
   },
   startWork: function startWork() {
-    this.resetVariables(this.minutesDom.innerHTML, this.seconds = 0, true, this.countDom.innerHTML - 1);
+    this.resetVariables(this.minutesDom.innerHTML, this.seconds = 0, true);
+    console.log(this.minutesDom.innerHTML);
   },
+  dangerMinuteur: function dangerMinuteur() {
+    this.timerDom.style.color = "red";
+    bcfull.style.display = "flex";
+  },
+  greenMinuteur: function greenMinuteur() {
+    this.timerDom.style.color = "green";
+  },
+  blueMinuteur: function blueMinuteur() {
+    this.timerDom.style.color = "blue";
+  },
+  stopMinuteur: function stopMinuteur() {
+    stop.style.display = "flex";
+    thenego.style.display = "none";
+  },
+  //////////////Conditions timer////////////////
   stopTimer: function stopTimer() {
     this.countDom.textContent--;
 
@@ -19544,6 +19593,20 @@ var pomodoro = {
       this.minutes--;
     } else {
       this.seconds--;
+    }
+
+    if (this.minutes >= 3) {
+      this.greenMinuteur();
+    } else if (this.minutes >= 1) {
+      this.blueMinuteur();
+    } else if (this.minutes < 1) {
+      this.dangerMinuteur();
+    }
+
+    if (this.minutes == 0) {
+      if (this.seconds == 0) {
+        this.stopMinuteur();
+      }
     }
 
     this.updateDom();

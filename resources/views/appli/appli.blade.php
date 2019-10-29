@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-<h2>Application de la Negociation</h2>
+<h2>Ajax test</h2>
 
 
 

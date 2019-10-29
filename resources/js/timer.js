@@ -1,5 +1,8 @@
 let confirm = document.getElementById("conf");
-
+let bcfull = document.getElementById("bcfull");
+let stop = document.getElementById("stop");
+let thenego = document.getElementById("thenego");
+let final = document.getElementById("final");
 
 var pomodoro = {
     started : false,
@@ -17,6 +20,7 @@ var pomodoro = {
     init : function(){
       var self = this;
       this.minutesDom = document.querySelector('#minutes');
+      this.timerDom = document.getElementById('timer');
       this.countDom = document.querySelector('#count');
       this.secondsDom = document.querySelector('#seconds');
       this.interval = setInterval(function(){
@@ -41,10 +45,30 @@ var pomodoro = {
     this.count = compteur;
     },
     startWork: function() {
-    this.resetVariables(this.minutesDom.innerHTML, this.seconds = 0, true, this.countDom.innerHTML - 1);
-    
+    this.resetVariables(this.minutesDom.innerHTML, this.seconds = 0, true);
+        console.log(this.minutesDom.innerHTML);
     },
-    
+    dangerMinuteur: function(){
+
+        this.timerDom.style.color = "red";
+        
+        bcfull.style.display ="flex";
+    },
+    greenMinuteur: function(){
+
+    this.timerDom.style.color = "green";
+    },
+    blueMinuteur: function(){
+
+    this.timerDom.style.color = "blue";
+    },
+    stopMinuteur: function () {
+        stop.style.display= "flex";
+        thenego.style.display = "none";
+    },
+    //////////////Conditions timer////////////////
+
+  
     stopTimer : function(){
         
         this.countDom.textContent --
@@ -75,6 +99,29 @@ var pomodoro = {
     } else {
         this.seconds--;
     }
+
+    if(this.minutes >= 3){
+
+        this.greenMinuteur();
+
+    }else if(this.minutes >= 1){
+
+        this.blueMinuteur();
+
+    } else if(this.minutes < 1 ) {
+
+        this.dangerMinuteur();
+
+    }
+    
+    if(this.minutes == 0 ) {
+        if (this.seconds ==0) {
+            this.stopMinuteur();
+        }
+    }
+
+
+
     this.updateDom();
     },
     timerComplete : function(){
