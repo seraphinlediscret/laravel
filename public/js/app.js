@@ -19464,31 +19464,40 @@ function action() {
 
   divone.className = "cell countone";
   divtwo.className = "cell selfone";
+  divtwo.id = "xval";
   divthree.className = "cell buythree";
   divfour.className = "cell wantfour";
+  divfour.id = "xprop";
   divfive.className = "cell soldone"; ////////////TD appendChild////////////////
-
-  tdtwo.appendChild(vend); //vendeur
 
   tr.appendChild(tdtwo); //vendeur
 
   tr.appendChild(t); // value
 
-  tdthree.appendChild(t);
-  tr.appendChild(tdthree);
-  tdone.appendChild(txt); // count
+  tr.appendChild(tdthree); //count
 
-  tr.appendChild(tdone); //count
-
-  tdfour.appendChild(want); //prix proposé
+  tr.appendChild(tdone); //ini
 
   tr.appendChild(tdfour); //prix proposé
 
-  tdfive.appendChild(sold); //rabais %
-
   tr.appendChild(tdfive); //rabais %
   //////DIV appendChild//////////////
-  //////button invisible/////
+
+  divone.appendChild(txt); //ini
+
+  tdone.appendChild(divone);
+  divtwo.appendChild(vend); //vendeur
+
+  tdtwo.appendChild(divtwo);
+  divthree.appendChild(t); //count
+
+  tdthree.appendChild(divthree);
+  divfour.appendChild(want); //prixproposé
+
+  tdfour.appendChild(divfour);
+  divfive.appendChild(sold); //rabais %
+
+  tdfive.appendChild(divfive); //////button invisible/////
 
   visibbutton.style.display = "none";
   yesorno.style.display = "initial"; ///////decrementation//////

@@ -128,6 +128,7 @@ function action() {
       }
       document.getElementById("validationCustom07").value = "";
       document.getElementById("validationCustom01").value = "";
+
       ////////////////////////TD/////////////////////////
       var tdone = document.createElement("TD");
       var txt = document.createTextNode(count);
@@ -143,7 +144,9 @@ function action() {
  
       var tdfive = document.createElement("TD");
       var sold = document.createTextNode("20%");
+
       //////////////////////DIV in TD////////////////
+
       var divone = document.createElement("DIV");
 
       var divtwo = document.createElement("DIV");
@@ -169,31 +172,42 @@ function action() {
 
       divone.className ="cell countone";
       divtwo.className ="cell selfone";
+      divtwo.id = "xval";
       divthree.className ="cell buythree";
       divfour.className ="cell wantfour";
+      divfour.id = "xprop";
       divfive.className ="cell soldone";
 
       ////////////TD appendChild////////////////
 
-      tdtwo.appendChild(vend);//vendeur
       tr.appendChild(tdtwo);//vendeur
  
       tr.appendChild(t); // value
  
-      tdthree.appendChild(t);
-      tr.appendChild(tdthree);
- 
-      tdone.appendChild(txt); // count
-      tr.appendChild(tdone);//count
- 
-      tdfour.appendChild(want);//prix proposé
+      tr.appendChild(tdthree);//count
+      
+      tr.appendChild(tdone);//ini
+      
       tr.appendChild(tdfour);//prix proposé
- 
-      tdfive.appendChild(sold);//rabais %
+      
       tr.appendChild(tdfive);//rabais %
 
       //////DIV appendChild//////////////
-      
+      divone.appendChild(txt);//ini
+      tdone.appendChild(divone);
+
+      divtwo.appendChild(vend);//vendeur
+      tdtwo.appendChild(divtwo);
+
+      divthree.appendChild(t);//count
+      tdthree.appendChild(divthree);
+
+      divfour.appendChild(want);//prixproposé
+      tdfour.appendChild(divfour);
+
+      divfive.appendChild(sold);//rabais %
+      tdfive.appendChild(divfive);
+
       //////button invisible/////
       visibbutton.style.display = "none";
       yesorno.style.display = "initial";
