@@ -104,9 +104,9 @@ function closeNego() {
 //////////ajout de tr et td/////////////
 
 let count = 0;
-var list = document.querySelector('ul');
+var list = document.querySelector('tr');
 list.addEventListener('click', function(ev) {
-    if (ev.target.tagName === 'LI'){
+    if (ev.target.tagName === 'TD'){
         ev.target.classList.toggle('checked');
     }
 }, false);
@@ -128,47 +128,72 @@ function action() {
       }
       document.getElementById("validationCustom07").value = "";
       document.getElementById("validationCustom01").value = "";
-      var span = document.createElement("TD");
+      ////////////////////////TD/////////////////////////
+      var tdone = document.createElement("TD");
       var txt = document.createTextNode(count);
  
-      var spantwo = document.createElement("TD");
+      var tdtwo = document.createElement("TD");
       var vend = document.createTextNode(pricetest);
      
-      var spanthree = document.createElement("TD");
+      var tdthree = document.createElement("TD");
       var t = document.createTextNode(actionshow);
  
-      var spanfour = document.createElement("TD");
+      var tdfour = document.createElement("TD");
       var want = document.createTextNode("25000");
  
-      var spanfive = document.createElement("TD");
+      var tdfive = document.createElement("TD");
       var sold = document.createTextNode("20%");
- 
+      //////////////////////DIV in TD////////////////
+      var divone = document.createElement("DIV");
+
+      var divtwo = document.createElement("DIV");
+
+      var divthree = document.createElement("DIV");
+
+      var divfour = document.createElement("DIV");
+
+      var divfive = document.createElement("DIV");
+
+      //////////////////TD class///////////////////
+
       tr.className = "trTABLE";
-      spantwo.className = "blockall selfed";// vendeur
-      spantwo.id = "y";
-      spanthree.className = "blockall buyed";//acheteur
-      span.className = "blockall countered";//count
-      spanfour.className = "blockall wanted";//prix proposé
-      spanfour.id = "priceprop";
-      spanfive.className = "blockall solded";//rabais %
-      
-      spantwo.appendChild(vend);//vendeur
-      tr.appendChild(spantwo);//vendeur
+      tdtwo.className = "blockall selfed";// vendeur
+      tdtwo.id = "y";
+      tdthree.className = "blockall buyed";//acheteur
+      tdone.className = "blockall countered";//count
+      tdfour.className = "blockall wanted";//prix proposé
+      tdfour.id = "priceprop";
+      tdfive.className = "blockall solded";//rabais %
+
+      ///////////// DIV class////////////////////////
+
+      divone.className ="cell countone";
+      divtwo.className ="cell selfone";
+      divthree.className ="cell buythree";
+      divfour.className ="cell wantfour";
+      divfive.className ="cell soldone";
+
+      ////////////TD appendChild////////////////
+
+      tdtwo.appendChild(vend);//vendeur
+      tr.appendChild(tdtwo);//vendeur
  
       tr.appendChild(t); // value
  
-      spanthree.appendChild(t);
-      tr.appendChild(spanthree);
+      tdthree.appendChild(t);
+      tr.appendChild(tdthree);
  
-      span.appendChild(txt); // count
-      tr.appendChild(span);//count
+      tdone.appendChild(txt); // count
+      tr.appendChild(tdone);//count
  
-      spanfour.appendChild(want);//prix proposé
-      tr.appendChild(spanfour);//prix proposé
+      tdfour.appendChild(want);//prix proposé
+      tr.appendChild(tdfour);//prix proposé
  
-      spanfive.appendChild(sold);//rabais %
-      tr.appendChild(spanfive);//rabais %
+      tdfive.appendChild(sold);//rabais %
+      tr.appendChild(tdfive);//rabais %
 
+      //////DIV appendChild//////////////
+      
       //////button invisible/////
       visibbutton.style.display = "none";
       yesorno.style.display = "initial";
